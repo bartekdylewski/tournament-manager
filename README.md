@@ -17,13 +17,11 @@ Python 3.12, FastAPI, SQLAlchemy, SQLite, Jinja2 + Bootstrap 5 (dark theme), uv,
 
 ```bash
 uv sync
-uv run uvicorn app.main:app --reload
-uv run pytest
+uv run dev    # server with autoreload
+uv run test   # pytest (extra arguments are passed through)
 ```
 
 App: http://127.0.0.1:8000, API docs (Swagger): http://127.0.0.1:8000/docs
-
-> Work in progress: the commands above will work once the app skeleton (step 0) is done.
 
 ## License
 

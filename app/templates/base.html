@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Menedżer turniejów{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/bootstrap.min.css') }}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="/">Menedżer turniejów</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainNav" aria-controls="mainNav"
+              aria-expanded="false" aria-label="Przełącz nawigację">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Turnieje</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    {% block messages %}
+      {% for message in errors or [] %}
+        <div class="alert alert-danger" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endblock %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{{ url_for('static', path='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
